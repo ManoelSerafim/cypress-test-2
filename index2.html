@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de tarefas</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Lista de tarefas</h1>
+
+    <form id="task-form">
+      <div class="form-group">
+        <label for="task-title">Título da tarefa</label>
+        <input
+          id="task-title"
+          name="title"
+          type="text"
+          placeholder="Ex.: Estudar Cypress"
+          data-cy="task-title"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="task-responsible">Responsável</label>
+        <input
+          id="task-responsible"
+          name="responsible"
+          type="text"
+          placeholder="Digite o nome do responsável"
+          data-cy="task-responsible"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="task-priority">Prioridade</label>
+        <select
+          id="task-priority"
+          name="priority"
+          data-cy="task-priority"
+        >
+          <option value="">Selecione uma prioridade</option>
+          <option value="Baixa">Baixa</option>
+          <option value="Média">Média</option>
+          <option value="Alta">Alta</option>
+        </select>
+      </div>
+
+      <fieldset class="form-group">
+        <legend>Status</legend>
+
+        <label class="radio-label">
+          <input
+            type="radio"
+            name="status"
+            value="Pendente"
+            data-cy="status-pending"
+            checked
+          >
+          Pendente
+        </label>
+
+        <label class="radio-label">
+          <input
+            type="radio"
+            name="status"
+            value="Concluída"
+            data-cy="status-completed"
+          >
+          Concluída
+        </label>
+      </fieldset>
+
+      <div class="form-group">
+        <label for="task-description">Descrição</label>
+        <textarea
+          id="task-description"
+          name="description"
+          rows="4"
+          placeholder="Descreva a tarefa"
+          data-cy="task-description"
+        ></textarea>
+      </div>
+
+      <p
+        id="error-message"
+        class="error"
+        data-cy="error-message"
+      ></p>
+
+      <div class="button-group">
+        <button
+          type="submit"
+          class="primary-button"
+          data-cy="add-button"
+        >
+          Adicionar tarefa
+        </button>
+
+        <button
+          type="button"
+          class="secondary-button"
+          data-cy="clear-button"
+        >
+          Limpar formulário
+        </button>
+      </div>
+    </form>
+
+    <section class="tasks-section">
+      <div class="tasks-header">
+        <h2>Tarefas cadastradas</h2>
+
+        <span data-cy="task-count">
+          0 tarefas
+        </span>
+      </div>
+
+      <div
+        id="task-list"
+        class="task-list"
+        data-cy="task-list"
+      ></div>
+    </section>
+  </main>
+
+  <script src="app2.js"></script>
+</body>
+</html>
